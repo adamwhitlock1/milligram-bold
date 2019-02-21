@@ -1,0 +1,155 @@
+
+// Form
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+input[type='color'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='datetime'],
+input[type='datetime-local'],
+input:not([type]),
+textarea,
+select
+	appearance: none // Removes awkward default styles on some inputs for iOS
+	background-color: transparent
+	border: .1rem solid $color-blue
+	border-radius: .4rem
+	box-shadow: none
+	box-sizing: inherit // Forced to replace inherit values of the normalize.css
+	height: 3.8rem
+	padding: .6rem 1.0rem // The .6rem vertically centers text on FF, ignored by Webkit
+	width: 100%
+
+	&:focus
+		border-color: $color-green
+		outline: 0
+
+select
+	background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="%23d1d1d1" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>') center right no-repeat
+	padding-right: 3.0rem
+
+	&:focus
+		background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="%2300A676" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>')
+
+textarea
+	min-height: 6.5rem
+
+label,
+legend
+	display: block
+	font-size: 1.6rem
+	font-weight: 700
+	margin-bottom: .5rem
+
+fieldset
+	border-width: 0
+	padding: 0
+
+input[type='checkbox'],
+input[type='radio']
+	display: inline
+
+.label-inline
+	display: inline-block
+	font-weight: normal
+	margin-left: .5rem
+	transition: .3s
+
+
+// extra goodies for stylized inputs without losing accessibility
+
+// labels
+input[type=radio]:focus + label,
+input[type=checkbox]:focus + label
+	color: $color-green
+	outline: 1px dotted $color-green
+
+input[type=radio],
+input[type=checkbox]
+  position: absolute
+  top: auto
+  overflow: hidden
+  clip: rect(1px 1px 1px 1px)
+  clip: rect(1px, 1px, 1px, 1px)
+  width: 1px
+  height: 1px
+  white-space: nowrap
+
+
+input[type=radio] + label,
+input[type=checkbox] + label
+  display: block
+  padding: .1em
+  padding-left: 2em
+  max-width: calc(100% - .5em)
+
+input[type=radio] + label:before,
+input[type=checkbox] + label:before
+	content: ''
+	background: #fff
+	border: .1em solid rgba(0, 0, 0, .75)
+	background-color: rgba(255, 255, 255, .8)
+	display: block
+	box-sizing: border-box
+	float: left
+	width: 1.15em
+	height: 1.2em
+	margin-left: -1.4em
+	margin-top: .2em
+	vertical-align: top
+	cursor: pointer
+	text-align: center
+	transition: all .2s ease-out
+
+
+input[type=radio] + label:before
+  border-radius: 100%
+
+
+input[type=radio]:disabled + label:before,
+input[type=checkbox]:disabled + label:before
+  border: .1em solid rgba(0, 0, 0, .1)
+  background-color: rgba(0, 0, 0, .1)
+
+
+input[type=radio]:disabled + label,
+input[type=checkbox]:disabled + label
+  color: #ccc
+
+
+input[type=radio]:checked + label:before
+	background-color: $color-green
+	border: 0.1em solid rgba(0,0,0,0.15)
+	box-shadow: 0px 3px 7px 0 rgba(0, 0, 0, 0.35)
+
+input[type=checkbox] + label:before
+  /*content: '\00d7';*/
+  /*content: '\002718';*/
+  /*content: '\002715';*/
+  /*content: '\0025a0';*/
+  content: '\002713'
+  //font-weight: bold
+  text-align: center
+  line-height: 1.15
+  color: rgba(0, 0, 255, 0)
+
+
+input[type=checkbox]:checked + label:before
+  color: $color-green
+  line-height: .9
+
+input[type=checkbox]:disabled + label:before
+  color: rgba(255, 255, 255, 0)
+
+
+input[type=checkbox]:checked:disabled + label:before
+  color: #bbb;
+  text-shadow: .05em 0 0 #bbb, -.05em 0 0 #bbb

@@ -1,0 +1,33 @@
+
+// Base
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:200,800')
+// Set box-sizing globally to handle padding and border widths
+*,
+*:after,
+*:before
+	box-sizing: inherit
+
+// The base font-size is set at 62.5% for having the convenience
+// of sizing rems in a way that is similar to using px: 1.6rem = 16px
+html
+	box-sizing: border-box
+	font-size: 62.5%
+
+// Default body styles
+body
+	color: $color-secondary
+	font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif
+	font-size: 1.6em // Currently ems cause chrome bug misinterpreting rems on body element
+	font-weight: 300
+	letter-spacing: .01em
+	line-height: 1.6
+
+h1, h2, h3
+	font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif
+	font-weight: 200
+
+h4, h5, h6
+	font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif
+	font-weight: 800
+	text-transform: uppercase
